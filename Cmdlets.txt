@@ -2,3 +2,4 @@ set-clipboard; pipe data into your clip board. Windows button + V to see clipboa
 Import-Module ActiveDirectory; allows you to import modules. Lots more Cmdlets after import. ->cd AD:\; You can access module drive. dir gives you domain classes / schema 
 get-command -Module ActiveDirectory;
 Read-Host -Prompt "Please Enter Password "; reads and displays prompt -> $read1fuser = Read-Host  -Prompt "Please Enter Password "; stores what is read as read1fuser. -AsSecureString
+Get-WinEvent -LogName Security | where-object { ($_.ID -match "^4625$") -or ($_.ID -match "^462.$") }; Where-Object you can remove Parenthesis and do single match. 
