@@ -6,4 +6,9 @@ I found it best not to have an -or or -and on its own line.
  ($_.ID -match "^462.$")
  };
  
+ Turning commands into a function:
+ Commands:
  
+ 
+ 
+ Function Usage:
