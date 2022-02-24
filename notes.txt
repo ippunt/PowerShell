@@ -1,0 +1,9 @@
+Multilining:
+May cause errors in some scenarios. 
+I found it best not to have an -or or -and on its own line.
+ Get-WinEvent -LogName Security | where-object { 
+ ($_.ID -match "^4625$") -or
+ ($_.ID -match "^462.$")
+ };
+ 
+ 
