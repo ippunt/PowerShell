@@ -3,5 +3,6 @@ Import-Module ActiveDirectory; allows you to import modules. Lots more Cmdlets a
 get-command -Module ActiveDirectory;
 Read-Host -Prompt "Please Enter Password "; reads and displays prompt -> $read1fuser = Read-Host  -Prompt "Please Enter Password "; stores what is read as read1fuser. -AsSecureString
 where-obect ->Get-WinEvent -LogName Security | where-object { ($_.ID -match "^4625$") -or ($_.ID -match "^462.$") }; Where-Object you can remove Parenthesis and do single match. 
-Compare-Object -ReferenceObjects $Objects1 -DifferencesObject $Objects2;
-get-member  -> get-process | get-member; Get all your objects and methods. 
+Compare-Object -ReferenceObjects $Objects1 -DifferencesObject $Objects2; Empty if no differences. 
+Get-Content -> $ob1 = Get-Content -Path .\1.txt; You can read a file into an object. This can be used with comparing objects. Especially if objects are stored for reboot. 
+Get-Member  -> get-process | get-member; Get all your objects and methods. 
