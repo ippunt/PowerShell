@@ -1,8 +1,14 @@
 set-clipboard; pipe data into your clip board. Windows button + V to see clipboard or turn on. 
 Import-Module ActiveDirectory; allows you to import modules. Lots more Cmdlets after import. ->cd AD:\; You can access module drive. dir gives you domain classes / schema 
 get-command -Module ActiveDirectory;
-Read-Host -Prompt "Please Enter Password "; reads and displays prompt -> $read1fuser = Read-Host  -Prompt "Please Enter Password "; stores what is read as read1fuser. -AsSecureString
+Read-Host -Prompt "Please Enter Password "; reads and displays prompt -> $read1fuser = Read-Host  -Prompt "Please Enter Password "; stores what is read as read1fuser.  
+    -AsSecureString; switch if you need a secure string read back in.
 where-obect ->Get-WinEvent -LogName Security | where-object { ($_.ID -match "^4625$") -or ($_.ID -match "^462.$") }; Where-Object you can remove Parenthesis and do single match. 
 Compare-Object -ReferenceObjects $Objects1 -DifferencesObject $Objects2; Empty if no differences. 
 Get-Content -> $ob1 = Get-Content -Path .\1.txt; You can read a file into an object. This can be used with comparing objects. Especially if objects are stored for reboot. 
 Get-Member  -> get-process | get-member; Get all your objects and methods. 
+
+Registry:
+Get-ItemProperty -Path "HKLM:\Software\ContosoCompany"; List key and value
+Set-ItemProperty -Path "HKLM:\Software\ContosoCompany" -Name "NoOfEmployees" -Value 823; Alter or set key and value
+
