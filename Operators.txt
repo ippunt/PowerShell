@@ -1,0 +1,11 @@
+$_ Is a temp variable for each object piped in. People generally think the period is associated but that is to access the object property.  
+get-eventlog -log security | where-object {$_.EventID -match 4625} | sort-object -property TimeGenerated | select-object -last 10 
+Used because you want to loop through each object and check EventID. Less strict alternative 
+
+get-eventlog -log security "4625"| sort-object -property TimeGenerated | select-object -last 10; May cause false positives.  
+
+1..3  the .. operator counts all the numbers inbetween. Each number on its own line. \n 1 \n 2 \n 3 \n. 
+
+Expansion Non-Expansion- 
+""    " The cat ate $var1"; Expressed double quotes, expanded.  
+''    'The cat ate $var1'; Non expressed, not expanded. Literal string.  
