@@ -1,0 +1,95 @@
+Set-MpPreference -DisableRealtimeMonitoring $True –Force; Windows Defender real time shut off 
+
+Set-ExecutionPolicy -ExecutionPolicy Bypass –Force; Not abailable for core. Bypass allows anything to be executed 
+
+get-help –full get-process; would give you many lines of data. ->get-help –ShowWindow get-process;  Can next and previous through help aswell 
+
+Alias -> cmdlet: 
+
+Dir -> get-childitem 
+
+Ls -> get-childitem 
+
+Cls -> clear-host 
+
+Clear -> clear-host 
+
+Echo -> write-output 
+
+Type -> get-content 
+
+Del -> remove-item 
+
+ps -> get-procss 
+
+Cd -> set-location 
+
+pwd -> get-location 
+
+Sort -> sort-object 
+
+Get-alias ps; show you one alias. -> get-alias; will show you all 
+
+As a matter of etiquette you should use cmdlet and not alias for shared scripts. 
+
+Echo "one"; echo "two"; command Seperator is the ";" 
+
+$apple = "Treeway"; echo $apple; Output:Treeway.  Variables do not need to be created first. Start with $ at creation and implementation.  
+
+When you see "=" run the command to the right of the equal sign and put it into the left of the equal sign.  
+
+$five = 5; $four=4; $five + $four; Output:9 
+
+4+5; Output:9 
+
+'this is rocket science'.Replace('rocket', 'rock'); Output: this is rock science 
+
+Get-Process -Name powershell_ise | Get-Member | findstr "CloseM"; findstr is your friend  
+
+(Get-Process powershell_ise).CloseMainWindow()  
+
+Get-process | get-member;  capture all the arguments on the left side and pass them as arguments to the right.  
+
+function ip { Get-NetIPAddress | Select-object IPAddress } 
+
+Get-service | export-csv path services.csv; You can only export simple strings and simple numbers.  
+
+$data = import-csv –path services.csv 
+
+Get-service | select-object –first 5 
+
+Get-service | select –last 3 
+
+Get-content users.txt | select –unique 
+
+Get-process "google*"; You can just feed it a string 
+
+Get-hotfix | select –last 3 
+
+$myArray = @(1,2,3.4,"B","C") 
+
+$myDictionary = @{"one" = 1;"two"=2}; Every Key must be unique 
+
+$ParamArgs = @{ Computername = "Member"; LogName = "Security" ; MaxEvents = 100 ; Erroraction = "stop"} 
+
+Get-winevent @ParamArgs;  This is spalling sending a dictionary with all the arguments. Arguments may be underneath each other line by line with no newline as the separator. 
+
+if ( "hello" -like "*ll*") { "Wild card Matched" }; 
+
+if ( "hello" -like "*ll") { "IfM" } ElseIf("hello" -like "*ll"){"IFEM"}Else{"Else Matched"}; No wild cards matched so output:Else Matched.  
+
+while ( 1 -gt 10){"OneIsGreaterThanTen"; start-sleep –seconds (2+3)} "OnelessThanTen"; Outputs: "OnelessThanTen".  WHile condition true keep doing what is in brackets, Once not do next line or after bracket.  
+
+Get-Service | ForEach-Object { $_.Name + ":" + $_.Status } ; ForEach is also an alias for ForEach-Object. ForEach can be used in two ways. Careful reference: Loops Conditions Testing 
+
+$a = $b = $c = 0; $array = @("a","b","b","c","c","c","c") 
+
+switch ($array) {{$_ -eq "a"}{$a++};{$_ -eq "b"}{$b++}; {$_ -eq "c"}{$c++}}; Notice Outside curleys, inside test, and command curleys.  
+
+ 
+
+ 
+
+$stopped = $running = $paused = 0; all variables 0 
+
+(get-process).count # This is called Grouping # 
