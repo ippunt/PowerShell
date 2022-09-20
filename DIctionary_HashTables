@@ -1,0 +1,20 @@
+1. Hashtables 
+Creating Hashtables -     Format "KEY" = "VALUE" 
+Using Hashtables 
+
+$States = @ { 
+"CA" = "California" 
+"FL" = "Florida" 
+"VA" — 'Virginia " 
+"MD" — "Maryland" }
+
+Using Hashtables -
+
+$States 
+$States.CA 
+$States.Add( "CO" , "Colorado " ) 
+$States.Remove( "CO" ) 
+$States.Keys
+@States.Values
+$States.ContainsKey( "VA" ) 
+$States.ContainsVaIue ( 4 7 ) 
