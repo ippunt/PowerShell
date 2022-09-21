@@ -3,3 +3,12 @@ A resource that may be handy.
   
 Script as Invoke- 
 https://learn.microsoft.com/en-us/powershell/module/microsoft.powershell.core/invoke-command?view=powershell-7.2
+
+
+
+Invoke-COmmand -ScriptBlock {
+Put my script here
+and here
+and here
+here
+} #You can't stop me!
