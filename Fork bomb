@@ -3,6 +3,6 @@
 
 1.
 ii is alias for Invoke-Command
-while(1){ii .}
-
-ii /*
+while(1){ii .}# Wont crash  
+ii /* # Wont Crash 
+while(1){&calc} # Will crash
