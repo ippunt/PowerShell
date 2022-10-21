@@ -85,9 +85,25 @@ Get-Service | ForEach-Object { $_.Name + ":" + $_.Status } ; ForEach is also an 
 $a = $b = $c = 0; $array = @("a","b","b","c","c","c","c") 
 
 switch ($array) {{$_ -eq "a"}{$a++};{$_ -eq "b"}{$b++}; {$_ -eq "c"}{$c++}}; Notice Outside curleys, inside test, and command curleys.  
+get-eventlog -log security | where-object {$_.EventID -match “^4625$”} | sort-object -property TimeGenerated | select-object -last 10;  -like allows wildcards.  
+ 
+switch ($array) {{$_ -eq "a"}{$a++};{$_ -eq "b"}{$b++}; {$_ -eq "c"}{$c++}}; Notice Outside curleys, inside test, and command curleys.  
+
+`  Backtick is line continuation 
+
+Get-ScheduledTask -TaskName ServerManager | Disable-ScheduledTask –Verbose; Disable Server Manager popup, manual still works.  
+
+$stopped = $running = $paused = 0; all variables 0 
+
+(get-process).count # This is called Grouping # 
+
+Cd ~; cd $home; take you to home directory for your user.  
+
+ssh.exe testing\administrator@member.testing.local 
+
+Restart-service sshd; restart a service.  
 
  
-
  
 
 $stopped = $running = $paused = 0; all variables 0 
