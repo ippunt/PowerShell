@@ -4,7 +4,7 @@ Set-ExecutionPolicy -ExecutionPolicy Bypass –Force; Not abailable for core. By
 
 get-help –full get-process; would give you many lines of data. ->get-help –ShowWindow get-process;  Can next and previous through help aswell 
 
-Alias -> cmdlet: 
+Alias -> cmdlet:             If you want to see any alias: get-alias cat; shows you real alias for cat which is get-content!
 
 Dir -> get-childitem 
 
