@@ -1,0 +1,8 @@
+while($true) {
+  $st = Get-Random -Minimum 5 -Maximum 10
+  $r  = Resolve-DNSName -Name FileShare -LlmnrOnly 2>&1
+  if($2.IPaddress) {
+    Write-Host("LLMNR response received from:"+$r.IPaddress)
+   }
+   Start-Sleep -Seconds $st
+  }
