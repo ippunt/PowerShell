@@ -6,3 +6,7 @@ while($true) {
    }
    Start-Sleep -Seconds $st
   }
+
+
+If you wont log instead of Write-Host:
+Write-EventLog -LogName "Microsoft-WIndows-Sysmon/Operational" - Source "Sysmon" - EventID 4618 -EntryType FailureAudit -Message "LLMNR: $($r.IPaddress)" -Category 1 -RawData 10,20
