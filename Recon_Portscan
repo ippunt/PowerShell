@@ -1,0 +1,1 @@
+> Test-NetCeonnection -ComputerName X.X.X.X -port 445;
