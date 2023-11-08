@@ -14,3 +14,6 @@ Get-WinEvent -LogName Security | where-object { ($_.ID -match "^4625$") -or ($_.
 Failed login:
 Get-WinEvent -LogName Security | where-object {($_.ID -match "^4625$")}
 Get-WinEvent -LogName Security | Where-Object { $_.ID -eq 4625 -and $_.Message -match "firstilastname" } 
+
+
+
