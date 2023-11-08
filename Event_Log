@@ -1,5 +1,15 @@
 https://www.sans.org/blog/working-with-event-log-part-1/
+Remember open PS as admin!
+
 Get-eventlog depracated. Somtimes I grab it for example code. Get-WinEvent can sometimes be slower. You can still use decrapcated functionality if needed.
 
 Get-WinEvent -LogName Security
 get-eventlog -log system | Where { $_.Username -eq 'DOmain\username'} | Select-object -first 2
+ get-eventlog -log security | where-object {$_.EventID -match “^4625$”} | sort-object -property TimeGenerated | select-object -last 10; Works for windows 10 and Server 2022 
+
+get-eventlog -log security | where-object { ($_.EventID -match "^4625$") -or  ($_.EventID -match "^462.$")} 
+
+Get-WinEvent -LogName Security | where-object { ($_.ID -match "^4625$") -or ($_.ID -match "^462.$") } 
+
+Failed login:
+Get-WinEvent -LogName Security | where-object {($_.ID -match "^4625$")}
