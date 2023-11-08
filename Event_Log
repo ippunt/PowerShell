@@ -2,4 +2,4 @@ https://www.sans.org/blog/working-with-event-log-part-1/
 Get-eventlog depracated. Somtimes I grab it for example code. Get-WinEvent can sometimes be slower. You can still use decrapcated functionality if needed.
 
 Get-WinEvent -LogName Security
-get-eventlog -log system | Where { $_.Username -eq 'DOmain\username'} | Select-object -frist 2
+get-eventlog -log system | Where { $_.Username -eq 'DOmain\username'} | Select-object -first 2
